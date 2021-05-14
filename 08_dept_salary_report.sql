@@ -1,5 +1,6 @@
+spool dept_salary_report.txt
 set echo off
-ttitle center 'Department Salary Report' SKIP 1
+ttitle center 'Total Salary for each Department Report' SKIP 1
 set heading on
 SET PAGESIZE 33
 SET LINESIZE 70
@@ -15,4 +16,5 @@ join departments on (emp1.department_id = departments.department_id)
 group by
         departments.department_id,
         departments.department_name
-order by 1
+order by 1;
+spool off
